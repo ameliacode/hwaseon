@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Searchbar from '../components/Searchbar';
+import SearchBox from '../components/SearchBox';
 import "./Home.css";
 import {naverMoviesApi} from '../api';
 
@@ -13,7 +13,7 @@ class Home extends React.Component{
       };
       
       getSearch = async () => {
-        console.log('search Movie');
+        console.log('Search content');
         const search = this.state.value;
     
         try {
@@ -55,11 +55,10 @@ class Home extends React.Component{
               : (<form onSubmit={this.handleSubmit}>
                 <div>
                   <div className="input_div">
-                    <h1>영화 검색</h1>
-                    <input className="input_search" type="text" value={this.state.value} onChange={this.handleChange} placeholder="영화를 검색해 보세요."/>
+                    <input className="input_search" type="text" value={this.state.value} onChange={this.handleChange} placeholder="제품명을 입력해주세요."/>
                   </div>
                   <div className="movies">
-                    {movies.map(movie => (<Searchbar key={movie.link} id={movie.link} year={movie.pubDate} title={movie.title} poster={movie.image} rating={movie.userRating} director={movie.director} actor={movie.actor}/>))}
+                    {movies.map(movie => (<SearchBox key={movie.link} id={movie.link} year={movie.pubDate} title={movie.title} poster={movie.image} rating={movie.userRating} director={movie.director} actor={movie.actor}/>))}
                   </div>
                 </div>
               </form>)
