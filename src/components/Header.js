@@ -22,7 +22,19 @@ class Navigation extends React.Component{
     }
 
     getResult = async () => {
+        const ID_KEY = "id_key";
+        const SECRET_KEY = "secret_key"
+        const search = this.state.value;
 
+        try{
+            if(search == ""){
+                this.setState({movies:[], isLoading: false})
+            } else {
+                const { data: {
+                    items
+                }} = await axios.get("https://openapi.anv")
+            }
+        }
     }
 
     componentDidMount = () => {
