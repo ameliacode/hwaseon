@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import SearchBox from '../components/SearchBox';
+import SearchBox from '../components/Header/SearchBox';
 import "./Home.css";
 import {naverMoviesApi} from '../api';
 
