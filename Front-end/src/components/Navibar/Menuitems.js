@@ -5,7 +5,7 @@ export const Menuitems = [
         cName: "nav-links"
     },
     { 
-        title: "제품 트래킹 (Naver & Coupang)", 
+        title: "제품 트래킹(N & C) / 키워드별 예상 판매(N)", 
         path: "/product-track",
         cName: "nav-links"
     },
