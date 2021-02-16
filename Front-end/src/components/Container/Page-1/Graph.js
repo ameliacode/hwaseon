@@ -1,9 +1,9 @@
 import React from "React";
 import PropTypes from "prop-types";
-import "./Chart.css";
+import "./Graph.css";
 import {Link} from "react-router-dom";
 
-function Chart ({})
+class Graph extends React.Component
 {
 
 }
