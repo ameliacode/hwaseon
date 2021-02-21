@@ -2,6 +2,6 @@
 
 ### Tools
 - Front-end: React
-- Back-end: Django
+- Severless: AWS Lambda + AWS API Gateway
 - Cloud platform: AWS
 
