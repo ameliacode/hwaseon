@@ -5,16 +5,11 @@ def get_searchad(keyword, time_unit):
 
     client = GetHeader()
     BASE_URL = 'https://api.naver.com'
-    API_KEY = client.API_KEY
-    SECRET_KEY = client.SECRET_KEY
-    CUSTOMER_ID = client.CUSTOMER_ID
 
     uri = '/keywordstool'
     method = 'GET'
     search_r = requests.get(BASE_URL + uri + '?hintKeywords={}&showDetail=1'.format(keyword),
-                            params={"sort": time_unit},
-                            headers=client.get_search_header(method, uri))
-
+                            params={"sort": time_unit}, headers=client.get_search_header(method, uri))
     try:
         search_result = search_r.json()["keywordList"][0]
     except:
