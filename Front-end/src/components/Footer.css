@@ -1,0 +1,19 @@
+.main-footer{
+    position: fixed;
+    color: gray;
+    background-color: white;
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding-top:49vh;
+}
+
+.li{
+    font-family: "KoPub Dotum";
+    font-weight: 300;
+    font-size: 11px;
+    text-align: center;
+    line-height: 160%;
+    list-style-type: none;
+}
