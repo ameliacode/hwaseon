@@ -1,6 +1,56 @@
 .group{
     text-align:center;
-    vertical-align: center;
+    vertical-align: center;   
+    background-color: white;
+    position: relative;
     display:block;
     margin-top: 300px;
-}     
+}   
+
+.search-window{
+    display: inline-flex;
+	width: 650px; height: 48px;
+	border: solid #FF6633;
+    margin-top: 35px;
+}
+
+.searchbox{
+    width: 645px; height: 46px;
+	border: 0;
+	line-height: 21px;
+	font-size: 16px;
+    font-family: "NanumSquare";
+	outline: none;
+}
+
+input{
+    margin-left: 20px;
+}
+
+button.submit-button{
+    width: 62px; height: 51px;
+	margin: 0;
+	background: #FF6633;
+	color: white;
+	border-radius: 0px;
+	cursor: pointer;
+    font-size: 22px;
+    float:right;
+    outline:none;
+    border-width: 0px;
+    text-align: center;
+}
+
+.menu{
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    grid-template-columns: (4,auto);
+    row-gap: 50px;
+    list-style: none;
+    margin-top: 20px;
+}

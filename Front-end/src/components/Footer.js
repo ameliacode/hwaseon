@@ -3,7 +3,7 @@ import "./Footer.css"
 
 const Footer = () => {
     return (
-    <div className = "main-footer">
+    <footer className = "main-footer">
         <div className = "container">
             <div className = "row">
                 <ul className = "li">
@@ -20,7 +20,7 @@ const Footer = () => {
                 </ul>
             </div>
         </div>
-    </div>);
+    </footer>);
 }
 
 export default Footer;

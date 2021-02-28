@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import {HashRouter, Route} from "react-router-dom";
+import {HashRouter, Route, Switch, Redirect} from "react-router-dom";
 import './App.css';
 import Navigation from "./components/Navibar/Navigation";
 import Header from "./components/Header";
@@ -12,24 +12,21 @@ import BlogTrack from "./routes/BlogTrack";
 
 
 function App() {
-  return (
-    <div className = "page=container">
-      <div className = "content-wrap">
-          {/* // <HashRouter>
-          //   <Header/>
-          //   <Navigation/>    
-          //   <Route path = "/keyncat" exact = {true} component = {KeyCat}/>
-          //   <Route path = "/itemtrack" exact = {true} component = {ItemTrack}/>
-          //   <Route path = "/masskeyword" exact = {true} component = {MassKey} />
-          //   <Route path = "/blogtrack" exact = {true} component = {BlogTrack} />
-          // </HashRouter> */}
+  return (    
         <HashRouter>
-          <Route path = "/" exact = {true} component = {Home}/>
+          <Switch>
+            <Route exact path = "/" exact = {true} component = {Home}/>
+            <Route>
+                <Header/>
+                <Navigation/> 
+                <Route path = "/keyncat" exact = {true} component = {KeyCat}/>
+                <Route path = "/itemtrack" exact = {true} component = {ItemTrack}/>
+                <Route path = "/masskeyword" exact = {true} component = {MassKey} />
+                <Route path = "/blogtrack" exact = {true} component = {BlogTrack} />
+            </Route>
+          </Switch>         
           <Footer/>
         </HashRouter>
-      </div>
-    </div>
-    
   );  
 }
 

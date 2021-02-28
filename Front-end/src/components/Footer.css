@@ -1,12 +1,11 @@
 .main-footer{
     position: fixed;
     color: gray;
-    background-color: white;
-    padding-top: 3em;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    padding-top:49vh;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .li{
@@ -16,4 +15,5 @@
     text-align: center;
     line-height: 160%;
     list-style-type: none;
+    padding-left: 0;
 }
