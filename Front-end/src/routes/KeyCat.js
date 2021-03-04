@@ -6,65 +6,30 @@ import {naverMoviesApi} from '../api';
 
 class KeyCat extends React.Component{
     state = {
-        isLoading: true,
-        movies: [],
-        value: "",
-        name: ""
-      };
-      
-      getSearch = async () => {
-        console.log('Search content');
-        const search = this.state.value;
+      isLoading: true,
+    };
     
-        try {
-          if (search === "") {
-            this.setState({movies: [], isLoading: false})
-          } else {
-            const {data: {
-                items
-              }} = await naverMoviesApi.search(search);
-            this.setState({movies: items, isLoading: false})
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      };
-    
-      componentDidMount() {
-        this.getSearch();
-      };
-    
-      handleChange = (e) => {
-        this.setState({value: e.target.value});
-      };
-    
-      handleSubmit = (e) => {
-        e.preventDefault();
-        this.getSearch();
-      };
-    
-      render() {
-        const {movies, isLoading, name} = this.state;
-    
-        return (<section className="container">
-          {
-            isLoading
-              ? (<div className="loader">
-                <span className="loader__text">Loading..{this.state.name}</span>
-              </div>)
-              : (<form onSubmit={this.handleSubmit}>
-                <div>
-                  <div className="input_div">
-                    <input className="input_search" type="text" value={this.state.value} onChange={this.handleChange} placeholder="제품명을 입력해주세요."/>
-                  </div>
-                  <div className="movies">
-                    {movies.map(movie => (<SearchBox key={movie.link} id={movie.link} year={movie.pubDate} title={movie.title} poster={movie.image} rating={movie.userRating} director={movie.director} actor={movie.actor}/>))}
-                  </div>
+    render() {
+  
+      return (
+          <div className = "cat-container">
+            <div className = "cat-functions">
+                <div className = "cat-searchBox "> 
+                  <input className = "cat-input"
+                  type = "searchbox"s
+                  placeholder = "검색할 키워드를 입력하세요"
+                  onChange = {this.props.handleChange}/>
+                  <button type = "submit" className = "cat-submit">
+                    <i className = "fa fa-search"></i>
+                  </button>
                 </div>
-              </form>)
-          }
-        </section>);
-      }
+                <div className = "monthly-search">
+                </div>
+            </div>    
+          </div>
+            
+      );
+    }
 }
 
 export default KeyCat;

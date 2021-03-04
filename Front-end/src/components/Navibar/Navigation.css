@@ -18,65 +18,42 @@
     transition: 0.3s;
     font-family: 'Noto Sans KR';
     color: rgba(0,0,0,0.47);
-    padding: 1rem 0; 
+    padding: 14px 0 10px 0; 
     font-size: 15px;
     text-decoration: none;
+    border-bottom: 3px solid white;
 }
 
-ul > .nav-links:before{
-    content:"";
-    position: absolute;
-    bottom: -7px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background-color: #FF6633;
-    border-radius: 8px 8px 0 0;
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.nav-links:not(.is-active):hover:before{
-    opacity: 1;
-    bottom: 0;
-}
-
-.nav-links:not(.is-active):hover{
+.nav-links:hover, .active{
     color: #FF6633;
-    font-weight: bold;  
-    transition: all 0.2s ease-out;
+    font-weight: bold;
 }
 
-
-ul > .nav-indicator{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    transition: 0.4s;
-    z-index: 1;
-    border-radius:  8px 8px 0 0;
-    background-color: #FF6633;
+.nav-bar .nav-links:hover, .active{
+    color: #FF6633;
+    font-weight: bold;
+    border-bottom: 3px solid#FF6633;
+    transition: all 0.4s;
 }
 
 .item-clicked {
-    font-weight: bold;
-    color: #FF6633;
     display: grid;
     grid-template-columns: repeat(4,auto);
-    column-gap: 50px;
+    column-gap: 80px;
     list-style: none;
     text-align: center;
     width: 150vw;
     justify-content: center;
     padding:0px;
     margin: 0px;
+    font-weight: bold;
+    color: #FF6633;
 }
 
 .item-unclicked {  
     display: grid;
     grid-template-columns: repeat(4,auto);
-    column-gap: 50px;
+    column-gap: 80px;
     list-style: none;
     text-align: center;
     width: 150vw;
@@ -85,3 +62,7 @@ ul > .nav-indicator{
     margin: 0px;
 }   
 
+
+.menu .item-unclicked, .menu .item-clicked {
+    column-gap: 50px;
+}

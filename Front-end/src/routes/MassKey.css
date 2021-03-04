@@ -1,0 +1,91 @@
+.key-container {
+    margin: 40px 22%;
+    position: relative;
+    display:flex;
+    text-align:center;
+    border-bottom: 2px solid #DDDDDD;
+}
+
+.key-functions{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 4px; */
+}
+
+.key-search{
+    display: flex;
+    flex-direction: column;
+}
+
+.key-searchBox{
+    display: flex;
+	width: 350px; height: 31px;
+	border: solid #FF926D;
+    border-width: 2px;
+    margin-top: 6px;
+}
+
+.key-classify{
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 12px;
+    width: 100px; height: 31px;
+    border: solid #FF926D;
+    border-width: 0 2px 0 0;
+    text-align: center;
+    color: rgba(0,0,0,0.67);
+    float:left;
+}
+
+.key-input{
+    width: 240px; height: 29px;
+	border: 0;
+	line-height: 20px;
+	font-size: 12px;
+	outline: none;
+    margin-left: 10px;
+}
+
+.key-submit{
+    height: 30px;
+    width: 35px;
+	margin: 0;
+    background-color: white;
+	color: #FF926D;
+	border-radius: 0px;
+    border-width: 0px;
+	cursor: pointer;
+    font-size: 20px;
+    float:right;
+    outline:none;
+    text-align: center;
+}
+
+.key-massSearch{
+    width: 36.5vw;
+    display:inline-flex;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    height: 118px;
+    border: solid #FF926D;
+    border-width: 2px;
+}
+
+.key-massInput{
+    width: 35vw;
+    margin-left: 8px;
+    border-width: 0px;
+    outline : none;
+    font-size: 12px;
+}
+
+.key-descript .descript{
+    padding: 8px;
+}
+
+.key-massSearch .key-classify{
+    width: 130px; height: 118px;
+    font-size: 12px;
+}

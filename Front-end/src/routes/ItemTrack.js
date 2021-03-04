@@ -5,10 +5,9 @@ import "./ItemTrack.css";
 class ItemTrack extends React.Component {
   state = {
     isLoading: true,
-    movies: [],
-    value: "",
-    name: ""
   };
+
+  
 
 }
 

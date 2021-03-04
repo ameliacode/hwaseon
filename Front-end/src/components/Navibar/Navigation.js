@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navigation.css";
-import {Link, useLocation} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 import {Menuitems} from "./Menuitems";
 
 class Navigation extends React.Component{
@@ -19,12 +19,12 @@ class Navigation extends React.Component{
                 <ul className = {this.state.clicked ? "item-clicked" : "item-unclicked" }>
                     {Menuitems.map((item, index) => {
                         return (
-                            <Link to = {item.path} key = {index} className = {item.cName}>
+                            <NavLink to = {item.path} key = {index} className = {item.cName}>
                                 {item.title}
-                            </Link>
+                            </NavLink>
                         )
                     })}
-                    <span className = "nav-indicator"></span>
+                    
                 </ul>
             </nav>
         );

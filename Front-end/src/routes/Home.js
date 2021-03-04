@@ -21,19 +21,20 @@ class Home extends React.Component
       const {handleInput} = this;
       return (
         <div className = "group">
-          <div className = "logo">
+          <Link to ="/">
+            <div className = {Home.logo}>
               <img 
               src = { logoIMG } 
               alt = "HWASEON"
               width = "330px"/>
-          </div>
-          <div className = "search-window">
-            <SearchBox handleChange = {handleInput } /> 
+            </div>
+          </Link>
+          <form className = "search-window">
+            <SearchBox handleChange = {handleInput} /> 
             <button type = "submit" className = "submit-button">
               <i className = "fa fa-search"></i>
             </button>
-          </div>
-          
+          </form>
           <div className = "menu">
               <ul className = {this.state.clicked ? "item-clicked" : "item-unclicked" }>
                 {Menuitems.map((item, index) => {

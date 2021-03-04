@@ -1,0 +1,105 @@
+.blog-container {
+    margin: 40px 22%;
+    position: relative;
+    display:flex;
+    text-align:center;
+    border-bottom: 2px solid #DDDDDD;
+}
+
+.blog-functions{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0;
+}
+
+.blog-search{
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-searchBox{
+    display: flex;
+	width: 360px; height: 31px;
+	border: solid #FF926D;
+    border-width: 2px;
+}
+
+.blog-classify{
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 13px;
+    width: 100px; height: 31px;
+    border: solid #FF926D;
+    border-width: 0 2px 0 0;
+    text-align: center;
+    color: rgba(0,0,0,0.67);
+    float:left;
+}
+
+.blog-input{
+    width: 240px; height: 29px;
+	border: 0;
+	line-height: 20px;
+	font-size: 13px;
+	outline: none;
+    margin-left: 10px;
+}
+
+.blog-submit{
+    height: 30px;
+    width: 35px;
+	margin: 0;
+    background-color: white;
+	color: #FF926D;
+	border-radius: 0px;
+    border-width: 0px;
+	cursor: pointer;
+    font-size: 20px;
+    float:right;
+    outline:none;
+    text-align: center;
+}
+
+.blog-buttons{
+    text-align: center;
+    outline:none;
+    margin: 8px 0 0 0 ;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column wrap; 
+    align-content: space-between; 
+    height:33px; 
+    width: 364px;
+}
+
+.blog-keyauto, .blog-viewcheck{
+    width: 170px;
+    height: 33px;
+    background-color:#FFD7C9;
+	color: #878787;
+	border-radius: 0px;
+	cursor: pointer;   
+    border-width: 0px;
+    font-size: 13px;
+    font-family: "KoPub Dotum";
+    font-weight: 300;
+}
+
+.blog-descript{
+    display:inline-flex;
+    margin-left:15px;
+}
+
+.descript{
+    font-family: "KoPub Dotum";
+    font-weight: 300;
+    font-size: 13px;
+    text-align: left;
+    line-height: 170%;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    color: #878787
+}
