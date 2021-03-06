@@ -1,37 +1,87 @@
-def find_key_auto(number):
-    testlist = []
-    testlist.append(nickname)
-    testlist.append(str(number) + "번째")
-    testlist.append(tlist[number])
-    req = requests.get(linklist[number])
-    req = req.text
-    soup = BeautifulSoup(req, 'html.parser')
-    ### 태그가져오기
-    if soup.find(class_='post_tag') == None:
-        testlist.append(None)
+import json
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+import concurrent.futures
+
+jsonList = []
+
+def view_rank(keyword):
+
+    if keyword == None:
+        pass
     else:
-        tags = soup.find(class_='post_tag').text
-        tags = tags.replace("\n", "")
-        tags = tags.split("#")
-        tags = list(filter(None, tags))
-        ### 해시 태그와 제목의 중복값 리스트 만들기
-        samelist = []
-        for i in tags:
-            if i in tlist_no_space[number]:
-                samelist.append(i)
-            else:
+        key_url = 'https://m.search.naver.com/search.naver?where=m_view&query=' + keyword + '&sm=mtb_viw.all&nso=&mode=normal&main_q=&st_coll=&topic_r_cat='
+        req = requests.get(key_url)
+        req = req.text
+        soup = BeautifulSoup(req, 'html.parser')
+
+        ### 첫페이지 40여개 파싱
+        search_all = soup.find_all('a', {'class': 'api_txt_lines total_tit'})
+        ### 랭킹용 숫자
+        rank = 0
+        ###
+        for index in range(len(search_all)):
+            ### 광고는 지나가기
+            if 'https://adcr.naver.com' in search_all[index]['href']:
                 pass
+            else:
+                viewJson = {}
+                ### 광고 없을 때의 순위 따로 채크
+                rank += 1
+                viewJson["rank"] = rank
+                ### 제목
 
-        ### 가장 긴 키워드를 메인키워드로 하기
-        ### 값이 같을시, 먼저 써있는게 우선으로 나옴
-        if samelist == []:
-            testlist.append('일치 없음')
-        else:
-            best = 0
-            for index in range(len(samelist)):
-                if len(samelist[index]) > len(samelist[best]):
-                    best = index
-            testlist.append(samelist[best])
-    testlist.append(linklist[number])
+                viewJson["title"] = search_all[index].text
+                viewJson["url"] = search_all[index]['href']
+                viewJson["keyword"] = keyword
 
-    key_auto_list.append(testlist)
+                jsonList.append(viewJson)
+
+def multithreading(event):
+    ### 멀티쓰레드 ###
+
+    keyList = event
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        executor.map(view_rank, keyList)
+
+def blog_view(event):
+    # event{"keyword":[], "body":[]}
+    # multithreading(event["keyword"])
+    # multithreading()
+    print(json.dumps(['솔리드인립에센스',
+                     '아이섀도우팔레트',
+                     '데자뷰마스카라',
+                     '겨드랑이색소침착',
+                     '폼클렌징추천',
+                     '클리오킬커버',
+                     '안번지는펜슬아이라이너',
+                     '바디로션추천',
+                     '이니스프리그린티씨드세럼',
+                     '올리브영컨실러추천']))
+
+
+    # sortList = sorted(jsonList, key=lambda e: (e['rank'], e['keyword']))
+    # bodyList = json.loads(event["body"])
+    # df2 = pd.DataFrame(sortList, columns=["rank","title","url","keyword"])
+    # df3 = pd.DataFrame(bodyList, columns=["title","url","keyword"])
+    #
+    # rankList = []
+    #
+    # for i in range(len(jsonList)):
+    #     testJson = {}
+    #     if df2['url'][i] in list(df3['url']):
+    #         testJson["rank"] = int(df2["rank"][i])
+    #         testJson["url"] = str(df2['url'][i])
+    #         rankList.append(testJson)
+    #     else:
+    #         pass
+    #
+    # rankList = sorted(rankList, key=lambda e: (e['rank'], e['url']))
+    # df4  = pd.DataFrame(rankList, columns = ["rank","url"])
+    # data = pd.merge(df3, df4, on='url')
+    # js = data.to_json(orient='columns')
+
+blog_view("Hello")

@@ -1,7 +1,8 @@
 import time
-
+import json
 from bs4 import BeautifulSoup
 import starter as st
+
 
 def blog_post(id):
     driver = st.start_drive()
@@ -24,4 +25,4 @@ def blog_post(id):
         postItem["title"] = title
         postItem["url"] = url
         jsonList.append(postItem)
-    return {"blog-posts": jsonList}
+    return jsonList
