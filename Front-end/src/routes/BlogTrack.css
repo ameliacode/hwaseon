@@ -11,6 +11,7 @@
 
 .blog-result{
     margin-top: 10px;
+    border-bottom: 2px solid #DDDDDD;
 }
 
 .blog-functions{
@@ -52,6 +53,7 @@
 	font-size: 13px;
 	outline: none;
     margin-left: 10px;
+    font-family: "NanumSquare";
 }
 
 .blog-submit{
@@ -92,6 +94,7 @@
     font-size: 13px;
     font-family: "KoPub Dotum";
     font-weight: 300;
+    outline:none;
 }
 
 .blog-descript{
@@ -131,3 +134,16 @@ th, td {
     width: 100%;
     border-collapse: collapse;
 }
+
+.blog-keyInput{
+    border-color: #FFD7C9;
+    border-radius: 0;
+    resize:none;
+    outline:none;
+    overflow:hidden;
+    height: 11px;
+    width: 100%;
+    font-family: "NanumSquare";
+    font-size: 12px;
+}
+    
