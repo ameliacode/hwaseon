@@ -73,6 +73,7 @@ class BlogTrack extends React.Component {
       if(!this.state.isKwdGen){
         console.log("No Keyword generated");
       } else {
+        console.log(this.state.keylist);
         for(var i=0; i<this.state.posts.length; i++) {
           this.state.posts[i]["keyword"] = this.state.keylist[i];
         }
@@ -189,7 +190,7 @@ class BlogTrack extends React.Component {
         <div className = "blog-result">
         { 
           <table className="blog-table"> 
-            <tr className = "table-title">
+            <tr className = "blog-table-title">
               <th style = {{width:"27%", paddingLeft: "55px",textAlign: "left"}}>글 제목 ▲</th>
               <th style = {{width:"9%"}}>키워드 ▲</th>
               <th style = {{width:"8%"}}>View 순위 ▲</th>

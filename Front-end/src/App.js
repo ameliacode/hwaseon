@@ -20,7 +20,7 @@ function App() {
                 <Header/>
                 <Navigation/> 
                 <Route path = "/keyncat" exact = {true} component = {KeyCat}/>
-                {/* <Route path = "/itemtrack" exact = {true} component = {ItemTrack}/> */}
+                <Route path = "/itemtrack" exact = {true} component = {ItemTrack}/>
                 <Route path = "/masskeyword" exact = {true} component = {MassKey} />
                 <Route path = "/blogtrack" exact = {true} component = {BlogTrack} />
             </Route>

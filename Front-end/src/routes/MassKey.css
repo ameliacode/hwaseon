@@ -33,10 +33,11 @@
     font-size: 12px;
     width: 100px; height: 31px;
     border: solid #FF926D;
-    border-width: 0 2px 0 0;
+    border-width: 0 1px 0 0;
     text-align: center;
     color: rgba(0,0,0,0.67);
     float:left;
+    flex-direction: column;
 }
 
 .key-input{
@@ -64,10 +65,10 @@
 }
 
 .key-massSearch{
-    width: 36.5vw;
+    width: 36.1vw;
     display:inline-flex;
     margin-bottom: 8px;
-    margin-left: 8px;
+    margin-left: 15px;
     height: 118px;
     border: solid #FF926D;
     border-width: 2px;
@@ -79,13 +80,61 @@
     border-width: 0px;
     outline : none;
     font-size: 12px;
+    resize:none;
+    /* overflow:hidden; */
+    padding: 3px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: 94px;
+    width: 100%;
+    font-family: "NanumSquare";
+    font-size: 12px;
 }
 
 .key-descript .descript{
     padding: 8px;
+    text-align: left;
+    outline:none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column wrap; 
+    align-content: space-between; 
 }
 
 .key-massSearch .key-classify{
-    width: 130px; height: 118px;
+    width: 125px; height: 118px;
     font-size: 12px;
+    border: solid #FF926D;
+    border-width: 0 1px 0 0;
 }
+
+.key-keyauto{
+    display: inline-block;
+    outline: none;
+    font-size: 7px;
+    width: 95px;
+    height: 20px;
+    text-align: center;
+    vertical-align: center;
+    margin: 3px;
+    margin-top: 18px;
+    font-family: "NanumSquare";
+    background-color: #FFCDBC;
+    border-radius: 5px;
+    border-width: 0;
+    padding: 0px;
+    color: #878787;
+}
+
+.key-massSearch{
+    width: 36.1vw;
+    display:inline-flex;
+    margin-bottom: 8px;
+    margin-left: 15px;
+    height: 118px;
+    border: solid #FF926D;
+    border-width: 2px;
+}
+
+
+
