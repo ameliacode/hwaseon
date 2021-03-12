@@ -12,7 +12,7 @@ class ItemTrack extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      uriValue: '',
+      uriValue: '', 
       isLoading: true,
       selected: ''
     };
@@ -44,7 +44,6 @@ class ItemTrack extends React.Component {
                 onChange={this._onSelect}  
                 value={defaultOption} 
                 placeholder={defaultOption}  
-
                 />
               </div>
               <div className = "item-searchBox "> 
@@ -99,7 +98,7 @@ class ItemTrack extends React.Component {
             <div className = "item-naver-result">
               <table className="item-naver-table"> 
                 <tr className = "item-naver-title">
-                  <th style = {{ width:"400px", paddingLeft: "5px", textAlign: "left"}}>키워드 ▲</th>
+                  <th style = {{ width:"400px", paddingLeft: "15px", textAlign: "left"}}>키워드 ▲</th>
                   <th style = {{ width:"350px", textAlign: "right"}}>순위 ▲</th>
                   <th style = {{width:"350px", textAlign: "right"}}>검색량 ▲</th>
                   <th style = {{width:"350px", textAlign: "right"}}>상품수 ▲</th>
@@ -123,14 +122,73 @@ class ItemTrack extends React.Component {
                     // </tr>) 
                 }
               </table>   
+              
+              
+              <div className = "item-search-inside">
+                <div className = "item-searchBox-inside"> 
+                  <div className = "item-classify-inside">스토어명</div> 
+                  <input className = "item-input"
+                  type = "searchbox"
+                  placeholder = "스토어명을 입력하세요."
+                  onChange = {this.props.handleChange}/>
+                </div>
+                <div className = "item-searchBox-inside"> 
+                  <div className = "item-classify-inside">키워드</div> 
+                  <input className = "item-input"
+                  type = "searchbox"
+                  placeholder = "키워드를 입력하세요."
+                  onChange = {this.props.handleChange}/>
+                </div>
+                <button type = "submit" className = "item-searchButton-inside">검색하기</button>
+              </div> 
+              <table className="item-naver-table"> 
+                <tr className = "item-naver-title">
+                    <th style = {{ width:"400px", paddingLeft: "15px", textAlign: "left"}}>키워드 ▲</th>
+                    <th style = {{ width:"350px", textAlign: "right"}}>순위 ▲</th>
+                    <th style = {{width:"350px", textAlign: "right"}}>검색량 ▲</th>
+                    <th style = {{width:"350px", textAlign: "right"}}>상품수 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right"}}>상품경쟁률 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right"}}>PC 월검색량 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right"}}>MO 월검색량 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right"}}>MO 광고클릭 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right", paddingRight:"15px"}}>PC 광고클릭 ▲</th>
+                  </tr>
+              </table> 
 
+
+              <div className = "item-search-inside-2">
+                <div className = "item-descript-inside-2">키워드별 예상 판매 (Npay 기준 | 최근 7일간)</div>
+                <form className = "item-searchBox-inside-2" onSubmit = {this.handleSubmit}> 
+                  <div className = "item-classify-inside-2">키워드 입력</div> 
+                  <input className = "item-input"
+                  type = "text"
+                  placeholder = "ex) 샴푸"
+                  value={this.state.value} onChange={this.handleChange}/>
+                  <button type = "submit" className = "item-submit" onChange={this.handleChange}>
+                    <i className = "fa fa-search"></i>
+                  </button>
+                </form>
+              </div> 
+              <table className="item-naver-table"> 
+                <tr className = "item-naver-title">
+                    <th style = {{ width:"400px", paddingLeft: "15px", textAlign: "left"}}>키워드 ▲</th>
+                    <th style = {{ width:"350px", textAlign: "right"}}>순위 ▲</th>
+                    <th style = {{width:"350px", textAlign: "right"}}>검색량 ▲</th>
+                    <th style = {{width:"350px", textAlign: "right"}}>상품수 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right"}}>상품경쟁률 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right"}}>PC 월검색량 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right"}}>MO 월검색량 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right"}}>MO 광고클릭 ▲</th>
+                    <th style = {{width:"450px", textAlign: "right", paddingRight:"15px"}}>PC 광고클릭 ▲</th>
+                  </tr>
+              </table>                   
           </div>
 
         ) 
           : (<div className = "item-coupang-result">
               <table className="item-coupang-table"> 
                 <tr className = "item-coupang-title">
-                  <th style = {{ width:"400px", paddingLeft: "5px", textAlign: "left"}}>키워드 ▲</th>
+                  <th style = {{ width:"400px", paddingLeft: "15px", textAlign: "left"}}>키워드 ▲</th>
                   <th style = {{ width:"350px", textAlign: "right"}}>순위 ▲</th>
                   <th style = {{width:"350px", textAlign: "right"}}>검색량 ▲</th>
                   <th style = {{width:"350px", textAlign: "right"}}>상품수 ▲</th>

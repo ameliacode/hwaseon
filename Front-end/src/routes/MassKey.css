@@ -81,7 +81,6 @@
     outline : none;
     font-size: 12px;
     resize:none;
-    /* overflow:hidden; */
     padding: 3px;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -89,6 +88,7 @@
     width: 100%;
     font-family: "NanumSquare";
     font-size: 12px;
+    line-height: 20px;
 }
 
 .key-descript .descript{
